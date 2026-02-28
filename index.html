@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taschenrechner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design.css">
+<script>
+
+    function knopf(symbol){
+        document.getElementById('Ergebnis').innerHTML += symbol;
+    }
+
+    function resultat(){
+        let fenster = document.getElementById('Ergebnis');
+        let result = eval(fenster.innerHTML);
+        fenster.innerHTML = result;
+
+    }
+
+    function allClean(){
+        let fenster = document.getElementById('Ergebnis');
+        fenster.innerHTML = " ";
+    }
+
+    function entf(){
+        let fenster = document.getElementById('Ergebnis');
+        if(fenster.innerHTML.endsWith(' ')){
+            fenster.innerHTML = fenster.innerHTML.slice(0, -3);
+        } 
+        else {
+            fenster.innerHTML = fenster.innerHTML.slice(0, -1);
+
+        }
+   }
+
+    /*function avg(){
+    let fenster = document.getElementById('Ergebnis');
+    let sammler = 
+    sammler++
+    let durchschnitt = sammler/2;
+   }*/
+    
+   function percent(){
+           let fenster = document.getElementById('Ergebnis');
+           let resultPercent = fenster.innerHTML;
+           if(resultPercent !== " "){                   //% ohne Zahl drücken
+            fenster.innerHTML = eval(resultPercent)/100;
+           }
+
+           
+        }
+
+
+
+
+</script>
+
+</head>
+<body>
+
+
+    <div id="Ergebnis">     <!Display>
+    </div>
+    
+
+    <table>
+        <tr>
+            <td onclick="knopf(7)">7</td>
+            <td onclick="knopf(8)">8</td>
+            <td onclick="knopf(9)">9</td>
+            <td class="farbe"; onclick="allClean()">AC</td>     <!All clear>
+            <td class="farbe"; onclick="entf()">
+                <img src="1828945.png" style="width: 20px;" height="20px">
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td onclick="knopf(4)">4</td>
+            <td onclick="knopf(5)">5</td>
+            <td onclick="knopf(6)">6</td>
+            <td class="farbe"; onclick="percent(' % ')">%</td>
+            <td class="farbe">AVG</td>    <!Average>
+        </tr>
+
+        <tr>
+            <td onclick="knopf(1)">1</td>
+            <td onclick="knopf(2)">2</td>
+            <td onclick="knopf(3)">3</td>
+            <td class="farbe"; onclick="knopf(' * ')">*</td>
+            <td class="farbe"; onclick="knopf(' / ')">/</td>
+        </tr>
+
+        <tr>
+            <td onclick="knopf(0)">0</td>
+            <td onclick="knopf(' , ')">,</td>
+            <td id="istGleich"; onclick="resultat()">=</td>
+            <td class="farbe"; onclick="knopf(' + ')">+</td>
+            <td class="farbe"; onclick="knopf(' - ')">-</td>
+        </tr>
+
+    </table>
+</body>
+</html>
