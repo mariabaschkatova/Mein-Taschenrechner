@@ -1,5 +1,4 @@
-Höppner-Billen/Java/Workspace/.metadata/.log
-Höppner-Billen/Java/Workspace/.metadata/.plugins/org.eclipse.buildship.core/gradle/versions.json
-Höppner-Billen/Java/Workspace/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt
-Höppner-Billen/Java/Workspace/.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Cache/Cache_Data/data_0
-Höppner-Billen/Java/Workspace/.metadata
+.vscode/
+Thumbs.db
+Desktop.ini
+*.log
