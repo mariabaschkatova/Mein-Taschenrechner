@@ -46,8 +46,8 @@
    }*/
     
    function percent(){
-           let fenster = document.getElementById('Ergebnis');
-           let resultPercent = fenster.innerHTML;
+        let fenster = document.getElementById('Ergebnis');
+        let resultPercent = fenster.innerHTML;
            if(resultPercent !== " "){                   //% ohne Zahl drücken
             fenster.innerHTML = eval(resultPercent)/100;
            }
@@ -55,13 +55,32 @@
            
         }
 
+    function avg() {
+        let fenster = document.getElementById('Ergebnis');
+        let inhalt = fenster.innerHTML.trim(); // Leerzeichen am Anfang/Ende entfernen
 
+        let zahlenListe = inhalt.split('+');
+
+        let anzahl = zahlenListe.length;
+
+        if (anzahl > 0 && inhalt !== "") {
+        // Zuerst einfach die Summe
+        let summe = eval(inhalt);
+        
+        // Danach Durchschnitt = Summe geteilt durch Anzahl
+        let durchschnitt = summe / anzahl;
+        
+        fenster.innerHTML = durchschnitt;
+    }
+}
 
 
 </script>
 
 </head>
 <body>
+
+    <div id="main-container">
 
 
     <div id="Ergebnis">     <!Display>
@@ -85,7 +104,7 @@
             <td onclick="knopf(5)">5</td>
             <td onclick="knopf(6)">6</td>
             <td class="farbe"; onclick="percent(' % ')">%</td>
-            <td class="farbe">AVG</td>    <!Average>
+            <td class="farbe"; onclick="avg()">AVG</td>    <!Average>
         </tr>
 
         <tr>
@@ -105,5 +124,6 @@
         </tr>
 
     </table>
+    </div>
 </body>
 </html>

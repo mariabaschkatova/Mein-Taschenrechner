@@ -4,6 +4,18 @@
         }
         
         */
+
+        #main-container {
+            width: 500px;
+            margin:50 px; /*50 px oben, auto waagenrecht*/
+            margin-left: auto;
+            margin-right: auto;
+            padding: 15px;  /*für Knöpfe*/
+            background-color: aliceblue;
+            /*box-shadow: ;*/
+
+
+        }
         table{
             width: 100%;
             height: 70vh;   /*Viewport High*/
